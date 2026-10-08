@@ -49,3 +49,5 @@ report: $(OUTPUTS) ## Generate build report
 	@echo "Report written to $(OUT_DIR)/report.txt"
 
 ci: clean check test ## Clean, check, build and test
+count: build ## Report how many words were built
+	@wc -w $(OUTPUTS) | tail -1
