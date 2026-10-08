@@ -49,5 +49,6 @@ report: $(OUTPUTS) ## Generate build report
 	@echo "Report written to $(OUT_DIR)/report.txt"
 
 ci: clean check test ## Clean, check, build and test
-count: build ## count the source files
+count: build ## report source files and built words
 	@ls -1 $(SRC_DIR)/*.txt | wc -l
+	@wc -w $(OUTPUTS) | tail -1
